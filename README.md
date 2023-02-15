@@ -1,3 +1,27 @@
+# docs
+1. build the devcontainer
+
+2. run
+```bash
+# enter the devcontainer
+docker exec -it projectx_devcontainer-app-1 bash
+# inside the container
+cd /workspaces/projectx
+git config --global --add safe.directory /workspaces/projectx
+vercel login
+vercel link
+vercel env pull
+npm run dev
+```
+Production deployment happens automatically when pushing to `main`, which requires a pull request.
+Other branches pushed to git will be preview deployments.
+
+You should change environment variables using the vercel cli or using the vercel web-portal (project settings > environment variables). 
+
+
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
