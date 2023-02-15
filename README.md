@@ -1,4 +1,5 @@
 # docs
+## dev environment
 1. build the devcontainer
 
 2. run
@@ -18,9 +19,34 @@ Other branches pushed to git will be preview deployments.
 
 You should change environment variables using the vercel cli or using the vercel web-portal (project settings > environment variables). 
 
+## cypress
+To run cypress interactively run
+```bash
+docker run -it \
+  -v $PWD:/e2e \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -w /e2e \
+  -e DISPLAY \
+  --network host \
+  --entrypoint cypress \
+  cypress/included:12.3.0 open --project .
+```
+more information can be found in
+https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command/
 
+Cypress executes as root and files created by it may be owned by the root user.
+In this case you can 
+```bash
+# to view details about file ownership
+ls -l
+# to change directory ownership
+sudo chown -R node:node DIRECTORY
+# to change file ownership
+sudo chown node:node FILENAME
+```
 
 ---
+## Next-specific docs ->
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
