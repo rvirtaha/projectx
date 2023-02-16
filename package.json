@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cy:interactive": "exec ./scripts/cy:interactive.sh",
-    "cy:headless": "exec ./scripts/cy:headless.sh"
+    "cy": "docker-compose -f ./.devcontainer/docker-compose.yml run --user 1000:1000 cypress run --project /e2e",
+    "cy:interactive": "docker-compose -f ./.devcontainer/docker-compose.yml run --user 1000:1000 cypress open --project /e2e",
+    "cy:headless": "npm run cy",
+    "cy:quiet": "npm run cy -- -q"
   },
   "dependencies": {
     "@next/font": "13.1.6",
