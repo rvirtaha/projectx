@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "cross-env NODE_ENV=test echo 'no tests specified'"
+    "test:interactive": "exec ./scripts/test:interactive.sh"
   },
   "dependencies": {
     "@next/font": "13.1.6",

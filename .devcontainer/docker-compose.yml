@@ -46,9 +46,6 @@ services:
 
   cypress:
     image: cypress/included:12.3.0
-    depends_on:
-      - db
-      - app
     working_dir: /
     network_mode: host
     volumes:
