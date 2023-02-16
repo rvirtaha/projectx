@@ -2,7 +2,7 @@
 {
     docker-compose \
         -f ./.devcontainer/docker-compose.yml \
-        -f ./.devcontainer/docker-compose-cypress.yml \
+        -f ./.devcontainer/cypress-open.yml \
         start cypress
 } || {
     echo 'docker-compose -f ... -f ... start cypress failed.'

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:interactive": "exec ./scripts/test:interactive.sh"
+    "cy:interactive": "exec ./scripts/cy:interactive.sh",
+    "cy:headless": "exec ./scripts/cy:headless.sh"
   },
   "dependencies": {
     "@next/font": "13.1.6",

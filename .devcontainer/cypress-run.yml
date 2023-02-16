@@ -4,7 +4,7 @@ services:
     working_dir: /workspaces/projectx
     command: npm run dev
   cypress:
-    entrypoint: cypress open --project /e2e
+    entrypoint: cypress run --project /e2e
     environment:
       - DISPLAY
     volumes:
